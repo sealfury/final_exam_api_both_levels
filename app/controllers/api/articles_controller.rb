@@ -1,7 +1,7 @@
 class Api::ArticlesController < ApplicationController
   def index
     articles = Article.all
-    render json: { articles: articles }
+    render json: { articles: articles }, each_serializer: ArticleSerializer
   end
 
   def show
